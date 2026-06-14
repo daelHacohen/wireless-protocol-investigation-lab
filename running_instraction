@@ -3,7 +3,15 @@ AP:
 sudo ip addr add 192.168.10.1/24 dev wlxc83a35c2e0a2
 sudo ip link set wlxc83a35c2e0a2 up
 sudo dnsmasq -C dnsmasq2.conf
-sudo hostapd hostapd_lab.config
+
+YOU NEED TO CHOOSE ONE OF THE OPTIONS:
+
+sudo hostapd hostapd_lab_BASELINE.config
+sudo hostapd hostapd_lab_with_PMF.config
+sudo hostapd hostapd_lab_with_TKIP.config
+sudo hostapd hostapd_lab_with_WPA3.config
+
+-----------------------------------------------------------------------------------------------------------------------
 
 LISTENING:
 
@@ -15,6 +23,8 @@ sudo ip link set wlan0mon down
 sudo iw dev wlan0mon set type monitor
 sudo ip link set wlan0mon up
 sudo iw dev wlan0mon set channel 6
+
+----------------------------------------------------------------------------------------------------------------------
 
 WIRESHARK FILTERS:
 
