@@ -11,3 +11,5 @@ sudo ip link set wlan0mon down
 sudo iw dev wlan0mon set type monitor
 sudo ip link set wlan0mon up
 sudo iw dev wlan0mon set channel 6
+
+wlan.bssid == C83A35C2E0A2
