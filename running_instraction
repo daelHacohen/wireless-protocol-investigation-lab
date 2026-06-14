@@ -3,7 +3,11 @@ sudo ip link set wlxc83a35c2e0a2 up
 sudo dnsmasq -C dnsmasq2.conf
 sudo hostapd hostapd_lab.config
 
-sudo ip link set wlxe84e06ad5857 down
-sudo iw dev wlxe84e06ad5857 set type monitor
-sudo ip link set wlxe84e06ad5857 up
-sudo iw dev wlxe84e06ad5857 set channel 6
+sudo apt install aircrack-ng
+sudo airmon-ng check kill
+sudo airmon-ng start wlxe84e06ad5857
+
+sudo ip link set wlan0mon down
+sudo iw dev wlan0mon set type monitor
+sudo ip link set wlan0mon up
+sudo iw dev wlan0mon set channel 6
