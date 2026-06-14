@@ -1,7 +1,11 @@
+AP:
+
 sudo ip addr add 192.168.10.1/24 dev wlxc83a35c2e0a2
 sudo ip link set wlxc83a35c2e0a2 up
 sudo dnsmasq -C dnsmasq2.conf
 sudo hostapd hostapd_lab.config
+
+LISTENING:
 
 sudo apt install aircrack-ng
 sudo airmon-ng check kill
@@ -11,5 +15,7 @@ sudo ip link set wlan0mon down
 sudo iw dev wlan0mon set type monitor
 sudo ip link set wlan0mon up
 sudo iw dev wlan0mon set channel 6
+
+WIRESHARK FILTERS:
 
 wlan.bssid == C83A35C2E0A2
