@@ -29,3 +29,9 @@ sudo iw dev wlan0mon set channel 6
 WIRESHARK FILTERS:
 
 wlan.bssid == C83A35C2E0A2
+
+------------------------------------------------------------------------------------------------------
+bash analyze_lab.sh BASELINE.pcapng results.csv
+bash analyze_lab.sh PMF.pcapng results.csv
+bash analyze_lab.sh TIKP.pcapng results.csv
+bash analyze_lab.sh WAP3.pcapng results.csv
