@@ -9,6 +9,7 @@ YOU NEED TO CHOOSE ONE OF THE OPTIONS:
 sudo hostapd hostapd_lab_BASELINE.config
 sudo hostapd hostapd_lab_with_PMF.config
 sudo hostapd hostapd_lab_with_TKIP.config
+sudo hostapd hostapd_lab_with_WPA3+2.config
 sudo hostapd hostapd_lab_with_WPA3.config
 
 -----------------------------------------------------------------------------------------------------------------------
