@@ -1,0 +1,11 @@
+Frame,Time,Type/Subtype,Transmitter,Receiver,Important Fields,Interpretation
+1,0.000000000,Probe Request,fe:f7:ae:58:03:ea,c8:3a:35:c2:e0:a2,SSID=Team_6,Client searches for the saved SSID.
+2,0.000011695,Probe Response,c8:3a:35:c2:e0:a2,fe:f7:ae:58:03:ea,SSID=Team_6; Group Cipher=CCMP; Pairwise Cipher=CCMP; AKM=PSK,AP advertises SSID and security capabilities.
+4,0.000015401,Authentication,fe:f7:ae:58:03:ea,c8:3a:35:c2:e0:a2,Status Code=0x0000,802.11 authentication stage is observed.
+5,0.012068591,Authentication,c8:3a:35:c2:e0:a2,fe:f7:ae:58:03:ea,Status Code=0x0000,802.11 authentication stage is observed.
+6,0.012071749,Association Request,fe:f7:ae:58:03:ea,c8:3a:35:c2:e0:a2,SSID=Team_6; Group Cipher=CCMP; Pairwise Cipher=CCMP; AKM=PSK,Client requests association using selected security parameters.
+7,0.034623351,Association Response,c8:3a:35:c2:e0:a2,fe:f7:ae:58:03:ea,Status Code=0x0000,AP accepts the association request.
+8,0.077445940,EAPOL,c8:3a:35:c2:e0:a2,fe:f7:ae:58:03:ea,Nonce present,EAPOL key exchange frame observed.
+9,0.082419513,EAPOL,fe:f7:ae:58:03:ea,c8:3a:35:c2:e0:a2,Group Cipher=CCMP; Pairwise Cipher=CCMP; AKM=PSK; Nonce present,EAPOL key exchange frame observed.
+10,0.085401067,EAPOL,c8:3a:35:c2:e0:a2,fe:f7:ae:58:03:ea,Nonce present,EAPOL key exchange frame observed.
+11,0.089284561,EAPOL,fe:f7:ae:58:03:ea,c8:3a:35:c2:e0:a2,Nonce present,EAPOL key exchange frame observed.
