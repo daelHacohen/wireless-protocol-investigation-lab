@@ -49,6 +49,11 @@ do
 
     elif [[ "$INFO" == *"Probe Response"* ]]; then
 
+        # Ignore Probe Responses until the first Probe Request is seen
+        if [ $probe_req_seen -eq 0 ]; then
+            continue
+        fi
+
         if [ $probe_resp_seen -eq 1 ]; then
             continue
         fi
