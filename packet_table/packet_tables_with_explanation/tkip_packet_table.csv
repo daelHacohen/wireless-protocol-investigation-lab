@@ -1,0 +1,20 @@
+Frame,Time,Type/Subtype,Transmitter,Receiver,Important Fields,Interpretation
+1,0,Probe Request,fe:f7:ae:58:03:ea,c8:3a:35:c2:e0:a2,SSID=Team_6,The client searches for the previously saved network profile.
+2,0.002254019,Probe Response,c8:3a:35:c2:e0:a2,fe:f7:ae:58:03:ea,"SSID=Team_6
+Pairwise Cipher=TKIP
+AKM=PSK",The AP advertises a modified security configuration using TKIP instead of the baseline CCMP cipher.
+3,0.002267113,Authentication,fe:f7:ae:58:03:ea,c8:3a:35:c2:e0:a2,Authentication Algorithm=Open System,The client initiates IEEE 802.11 authentication.
+4,0.008939057,Authentication,c8:3a:35:c2:e0:a2,fe:f7:ae:58:03:ea,Status Code=0 (Success),The AP accepts the client's authentication request.
+5,0.008949997,Association Request,fe:f7:ae:58:03:ea,c8:3a:35:c2:e0:a2,"SSID=Team_6
+AKM=PSK",The client proceeds with association despite the modified cipher configuration.
+6,0.020508241,Association Response,c8:3a:35:c2:e0:a2,fe:f7:ae:58:03:ea,Status Code=0 (Success),The AP accepts the association request.
+10,0.035280492,EAPOL M1,c8:3a:35:c2:e0:a2,fe:f7:ae:58:03:ea,"Message 1 of 4
+Anonce",The AP initiates the 4-Way Handshake.
+11,0.050989853,EAPOL M2,fe:f7:ae:58:03:ea,c8:3a:35:c2:e0:a2,"Message 2 of 4
+SNonce
+MIC",The client proves possession of the Pairwise Master Key.
+12,0.051003086,EAPOL M3,c8:3a:35:c2:e0:a2,fe:f7:ae:58:03:ea,"Message 3 of 4
+GTK Distribution
+MIC",The AP distributes group key material and installs session keys.
+13,0.051005256,EAPOL M4,fe:f7:ae:58:03:ea,c8:3a:35:c2:e0:a2,"Message 4 of 4
+MIC",The client confirms key installation and completes the 4-Way Handshake.

@@ -1,0 +1,21 @@
+Frame,Time,Type/Subtype,Transmitter,Receiver,Important Fields,Interpretation
+107,9.631381386,Probe Request,fe:f7:ae:58:03:ea,c8:3a:35:c2:e0:a2,SSID=Team_6,The client actively searches for the previously saved network profile.
+108,9.63426378,Probe Response,c8:3a:35:c2:e0:a2,fe:f7:ae:58:03:ea,"SSID=Team_6
+AKM=PSK
+Pairwise Cipher=CCMP",The AP advertises the baseline security configuration to the client.
+109,9.635540219,Authentication,fe:f7:ae:58:03:ea,c8:3a:35:c2:e0:a2,Authentication Algorithm = Open System,The client initiates IEEE 802.11 authentication with the AP.
+110,9.637405573,Authentication,c8:3a:35:c2:e0:a2,fe:f7:ae:58:03:ea,Status Code = 0 (Success),The AP accepts the client's authentication request.
+116,9.645474965,Association Request,fe:f7:ae:58:03:ea,c8:3a:35:c2:e0:a2,"SSID=Team_6
+AKM=PSK
+Cipher=CCMP",The client requests association using the advertised baseline security configuration.
+117,9.670137788,Association Response,c8:3a:35:c2:e0:a2,fe:f7:ae:58:03:ea,Status Code = 0 (Success),The AP accepts the association request and allows the client to proceed.
+118,9.70426908,EAPOL M1,c8:3a:35:c2:e0:a2,fe:f7:ae:58:03:ea,"Message 1 of 4
+Anonce",The AP initiates the WPA2 4-Way Handshake.
+119,9.713954797,EAPOL M2,fe:f7:ae:58:03:ea,c8:3a:35:c2:e0:a2,"Message 2 of 4
+SNonce
+MIC",The client proves possession of the Pairwise Master Key and participates in key derivation.
+120,9.713975196,EAPOL M3,c8:3a:35:c2:e0:a2,fe:f7:ae:58:03:ea,"Message 3 of 4
+GTK Distribution
+MIC",The AP distributes group key material and instructs the client to install session keys.
+121,9.718233904,EAPOL M4,fe:f7:ae:58:03:ea,c8:3a:35:c2:e0:a2,"Message 4 of 4
+MIC",The client confirms key installation and completes the 4-Way Handshake.
