@@ -70,3 +70,21 @@ timelines. Ensure scripts are executable:
 - PCAPs/: Raw packet captures (.pcapng) for all conditions.
 - Scripts/: extract_security_summary.sh and packet_timeline.sh.
 - Results/: Generated CSV files and analysis outputs.
+- Screenshots/: Visual evidence of connection sequences and security settings.
+- Reference Materials: 
+    - "חלק ראשון_19.zip"
+    - "wep_s_19.pdf"
+    - "WPA_C_s_19.pdf"
+    - "SDR_s_19.pdf"
+    - "Assignment_2_Wireless_Protocol_Investigation_Lab_A_s_20.pdf"
+
+## Screenshots & Evidence
+The `Screenshots/` directory contains visual evidence of the laboratory setup and captured 
+handshake sequences:
+- `hostapd_config_examples/`: Configuration snippets for Baseline, PMF, TKIP, and WPA3 modes.
+- `Handshake_Captures/`: Annotated Wireshark screenshots showing:
+    - Beacon/Probe Response security advertisements.
+    - Authentication frame exchanges (WPA2 vs. WPA3-SAE).
+    - Association requests and status codes.
+    - EAPOL 4-Way Handshake messages.
+    - Post-connection PMF-protected management frames.
