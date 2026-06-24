@@ -5,7 +5,7 @@ INPUT=$1
 OUTPUT=$2
 
 if [ ! -s "$OUTPUT" ]; then
-    echo "Experiment_Phase,AP_Cipher_Suite,AP_AKM_Suite,AP_PMF_Requirement,Client_Auth_Frames_Count,Client_Association_Status,EAPOL_Packet_Count,PMF_Actively_Used,Final_Connection_Status" > "$OUTPUT"
+    echo "Experiment_Phase,AP_Cipher_Suite,AP_AKM_Suite,AP_PMF_Requirement,Client_Auth_Frames_Count,Client_Association_Status,EAPOL_Packet_Count,PMF_Observed,Final_Connection_Status" > "$OUTPUT"
 fi
 
 EXP_NAME=$(basename "$INPUT" .pcapng)
