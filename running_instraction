@@ -46,3 +46,11 @@ bash analyze_lab.sh WPA3.pcapng results.csv
 OVERLEAF LINK:
 
 https://www.overleaf.com/project/6a3019e0c8e2a76e31a1295a
+
+---------------------------------------------------------------------------------------------------
+chmod +x analyze_lab.sh packet_timeline.sh
+
+./analyze_lab.sh BASELINE.pcapng summary_results.csv
+./analyze_lab.sh PMF.pcapng summary_results.csv
+./analyze_lab.sh TKIP.pcapng summary_results.csv
+./analyze_lab.sh WPA3.pcapng summary_results.csv
