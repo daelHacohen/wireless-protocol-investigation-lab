@@ -1,0 +1,5 @@
+Experiment_Phase,AP_Cipher_Suite,AP_AKM_Suite,AP_PMF_Requirement,Client_Auth_Frames_Count,Client_Association_Status,EAPOL_Packet_Count,PMF_Actively_Used,Final_Connection_Status
+BASELINE,CCMP,PSK (WPA2),False,2 (WPA2 Open Expected),0 (Success),4,No,Success (Clean 4-Way)
+PMF,CCMP,PSK (WPA2),True,2 (WPA2 Open Expected),0 (Success),4,Yes (Encrypted Frames Seen),Success (Clean 4-Way)
+TKIP,TKIP,PSK (WPA2),False,2 (WPA2 Open Expected),0 (Success),4,No,Success (Clean 4-Way)
+WPA3,CCMP,WPA3 Transition (PSK+SAE),True,4 (WPA3 SAE Expected),0 (Success),4,Yes (Encrypted Frames Seen),Success (Clean 4-Way)
