@@ -19,8 +19,8 @@ To initialize the rogue access point for a specific experimental condition, use 
 following commands:
 
   # Set up IP address
-  sudo ip addr add 192.168.10.1/24 dev <AP_INTERFACE>
-  sudo ip link set <AP_INTERFACE> up
+  sudo ip addr add 192.168.10.1/24 dev wlxc83a35c2e0a2
+  sudo ip link set wlxc83a35c2e0a2 up
   
   # Start DHCP/DNS service
   sudo dnsmasq -C dnsmasq2.conf
@@ -34,7 +34,7 @@ To capture traffic in monitor mode on Channel 6:
 
   # Prepare interface
   sudo airmon-ng check kill
-  sudo airmon-ng start <MONITOR_INTERFACE>
+  sudo airmon-ng start wlxe84e06ad5857
   
   # Configure interface settings
   sudo ip link set wlan0mon down
