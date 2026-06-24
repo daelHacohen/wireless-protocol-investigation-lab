@@ -50,10 +50,10 @@ https://www.overleaf.com/project/6a3019e0c8e2a76e31a1295a
 ---------------------------------------------------------------------------------------------------
 chmod +x analyze_lab.sh packet_timeline.sh
 
-./Cextract_security_summary.sh BASELINE.pcapng summary_results.csv
-./Cextract_security_summary.sh PMF.pcapng summary_results.csv
-./Cextract_security_summary.sh TKIP.pcapng summary_results.csv
-./Cextract_security_summary.sh WPA3.pcapng summary_results.csv
+./extract_security_summary.sh BASELINE.pcapng summary_results.csv
+./extract_security_summary.sh PMF.pcapng summary_results.csv
+./extract_security_summary.sh TKIP.pcapng summary_results.csv
+./extract_security_summary.sh WPA3.pcapng summary_results.csv
 
 ./packet_timeline.sh BASELINE.pcapng baseline_timeline.csv
 ./packet_timeline.sh PMF.pcapng pmf_timeline.csv
