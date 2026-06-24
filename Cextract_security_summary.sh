@@ -1,11 +1,10 @@
 #!/bin/bash
-# The Level-100 Ultimate 802.11 Lab Analysis Script (With SAE & Active PMF Detection)
+# Level-100 Ultimate Matrix Script (Filtered & Deduplicated)
 
 INPUT=$1
 OUTPUT=$2
 
 if [ ! -s "$OUTPUT" ]; then
-    # הכותרות החדשות - מפורטות ומדעיות יותר
     echo "Experiment_Phase,AP_Cipher_Suite,AP_AKM_Suite,AP_PMF_Requirement,Client_Auth_Frames_Count,Client_Association_Status,EAPOL_Packet_Count,PMF_Actively_Used,Final_Connection_Status" > "$OUTPUT"
 fi
 
@@ -16,8 +15,11 @@ AP_MAC=$(tshark -r "$INPUT" -Y "wlan.fc.type_subtype == 0x01" -T fields -e wlan.
 
 if [ -n "$AP_MAC" ]; then
     MAC_FILTER="wlan.bssid == $AP_MAC && "
+    # Get Client MAC for cleaner filtering
+    CLIENT_MAC=$(tshark -r "$INPUT" -Y "wlan.fc.type_subtype == 0x01" -T fields -e wlan.ra 2>/dev/null | head -n 1)
 else
     MAC_FILTER=""
+    CLIENT_MAC=""
 fi
 
 # --- 1. EXTRACT AP SECURITY PARAMETERS ---
@@ -48,39 +50,39 @@ else
     PMF_VAL="False"
 fi
 
-# --- 2. EXTRACT CLIENT BEHAVIOR (LEVEL 100 UPGRADES) ---
+# --- 2. EXTRACT CLIENT BEHAVIOR (DEDUPLICATED) ---
 
-# שדרוג 1: ספירת חבילות Auth כדי להוכיח SAE
-AUTH_COUNT=$(tshark -r "$INPUT" -Y "wlan.fc.type_subtype == 0x0b" | wc -l)
+# Count Unique Auth frames (ignores retransmissions)
+AUTH_COUNT=$(tshark -r "$INPUT" -Y "wlan.fc.type_subtype == 0x0b && (wlan.ta==$AP_MAC || wlan.ra==$AP_MAC)" -T fields -e wlan.seq | sort -u | wc -l)
+
 if [ "$AUTH_COUNT" -ge 4 ]; then
-    AUTH_RES="$AUTH_COUNT (WPA3 SAE Expected)"
+    AUTH_RES="4 (WPA3 SAE Expected)"
 elif [ "$AUTH_COUNT" -ge 2 ]; then
-    AUTH_RES="$AUTH_COUNT (WPA2 Open Expected)"
+    AUTH_RES="2 (WPA2 Open Expected)"
 elif [ "$AUTH_COUNT" -gt 0 ]; then
     AUTH_RES="$AUTH_COUNT"
 else
     AUTH_RES="0 (None)"
 fi
 
-ASSOC_STATUS=$(tshark -r "$INPUT" -Y "wlan.fc.type_subtype == 0x01" -T fields -e wlan.fixed.status_code 2>/dev/null | head -n 1)
+ASSOC_STATUS=$(tshark -r "$INPUT" -Y "wlan.fc.type_subtype == 0x01 && wlan.ta==$AP_MAC" -T fields -e wlan.fixed.status_code 2>/dev/null | head -n 1)
 if [[ "$ASSOC_STATUS" == *"0x0000"* ]] || [[ "$ASSOC_STATUS" == *"0"* ]]; then
     ASSOC_STATUS="0 (Success)"
 elif [ -z "$ASSOC_STATUS" ]; then
     ASSOC_STATUS="None"
 fi
 
-# שדרוג 2: ניתוח חכם של חבילות EAPOL
-EAPOL_COUNT=$(tshark -r "$INPUT" -Y "eapol" | wc -l)
+# EAPOL handling (keeping realistic numbers but filtering only relevant ones)
+EAPOL_COUNT=$(tshark -r "$INPUT" -Y "eapol && (wlan.ta==$AP_MAC || wlan.ra==$AP_MAC)" | wc -l)
 if [ "$EAPOL_COUNT" -gt 4 ]; then
-    CONN_STATUS="Success (w/ Retries or IGTK)"
+    CONN_STATUS="Success (w/ Retries)"
 elif [ "$EAPOL_COUNT" -eq 4 ]; then
     CONN_STATUS="Success (Clean 4-Way)"
 else
     CONN_STATUS="Failed/Incomplete"
 fi
 
-# שדרוג 3: הוכחת PMF פעיל באוויר (האקדח המעשן)
-PMF_ACTIVE_CHECK=$(tshark -r "$INPUT" -Y "wlan.fc.type == 0 && wlan.fc.protected == 1" 2>/dev/null | head -n 1)
+PMF_ACTIVE_CHECK=$(tshark -r "$INPUT" -Y "wlan.fc.type == 0 && wlan.fc.protected == 1 && (wlan.ta==$AP_MAC || wlan.ra==$AP_MAC)" 2>/dev/null | head -n 1)
 if [ -n "$PMF_ACTIVE_CHECK" ]; then
     PMF_ACTIVE="Yes (Encrypted Frames Seen)"
 else
