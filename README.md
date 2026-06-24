@@ -62,7 +62,7 @@ The repository is organized around the required deliverables: raw captures, pars
 | `running_instraction` | Additional local run notes and command reminders. |
 | `README.md` | Repository guide and reproducibility instructions. |
 | `Assignment_2_Wireless_Protocol_Investigation_Lab.pdf` | Assignment requirements. |
-| `Wireless_Protocol_Investigation_Lab_Report.pdf` | Additional assignment/reference copy. |
+| `Wireless_Protocol_Investigation_Lab_Report.pdf` | Experimental Summary Report. |
 
 ---
 
