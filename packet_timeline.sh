@@ -20,13 +20,21 @@ assoc_req_seen=0
 assoc_resp_seen=0
 auth_count=0
 
+# --- התיקון: משתני בקרה חדשים לסינון כפילויות של EAPOL ---
+m1_seen=0
+m2_seen=0
+m3_seen=0
+m4_seen=0
+
+# --- התיקון: הוספת wlan.fc.retry == 0 לסינון שידורים חוזרים ---
 tshark -r "$PCAP" \
--Y "wlan.fc.type_subtype==0x04 || \
+-Y "wlan.fc.retry == 0 && ( \
+    wlan.fc.type_subtype==0x04 || \
     wlan.fc.type_subtype==0x05 || \
     wlan.fc.type_subtype==0x0b || \
     wlan.fc.type_subtype==0x00 || \
     wlan.fc.type_subtype==0x01 || \
-    eapol" \
+    eapol)" \
 -T fields \
 -e frame.number \
 -e frame.time_relative \
@@ -63,7 +71,7 @@ do
 
     elif [[ "$INFO" == *"Authentication"* ]]; then
 
-        # --- התיקון כאן: שינינו מ-2 ל-4 כדי לאפשר את ה-SAE ---
+        # --- התיקון: מאפשרים עד 4 חבילות עבור WPA3 SAE ---
         if [ $auth_count -ge 4 ]; then
             continue
         fi
@@ -89,16 +97,25 @@ do
         assoc_resp_seen=1
         TYPE="Association Response"
 
+    # --- התיקון: מתעלמים מהודעות EAPOL כפולות ---
     elif [[ "$INFO" == *"Message 1 of 4"* ]]; then
+        if [ $m1_seen -eq 1 ]; then continue; fi
+        m1_seen=1
         TYPE="EAPOL M1"
 
     elif [[ "$INFO" == *"Message 2 of 4"* ]]; then
+        if [ $m2_seen -eq 1 ]; then continue; fi
+        m2_seen=1
         TYPE="EAPOL M2"
 
     elif [[ "$INFO" == *"Message 3 of 4"* ]]; then
+        if [ $m3_seen -eq 1 ]; then continue; fi
+        m3_seen=1
         TYPE="EAPOL M3"
 
     elif [[ "$INFO" == *"Message 4 of 4"* ]]; then
+        if [ $m4_seen -eq 1 ]; then continue; fi
+        m4_seen=1
         TYPE="EAPOL M4"
 
     else
