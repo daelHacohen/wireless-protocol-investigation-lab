@@ -36,10 +36,10 @@ RUN PARSER SCRIPT:
 
 chmod +x extract_security_summary.sh packet_timeline.sh
 
-./extract_security_summary.sh BASELINE.pcapng summary_results.csv
-./extract_security_summary.sh PMF.pcapng summary_results.csv
-./extract_security_summary.sh TKIP.pcapng summary_results.csv
-./extract_security_summary.sh WPA3.pcapng summary_results.csv
+./extract_security_summary.sh BASELINE.pcapng results.csv
+./extract_security_summary.sh PMF.pcapng results.csv
+./extract_security_summary.sh TKIP.pcapng results.csv
+./extract_security_summary.sh WPA3.pcapng results.csv
 
 ./packet_timeline.sh BASELINE.pcapng baseline_timeline.csv
 ./packet_timeline.sh PMF.pcapng pmf_timeline.csv
