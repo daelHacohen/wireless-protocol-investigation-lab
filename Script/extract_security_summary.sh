@@ -84,7 +84,7 @@ fi
 
 PMF_ACTIVE_CHECK=$(tshark -r "$INPUT" -Y "wlan.fc.type == 0 && wlan.fc.protected == 1 && (wlan.ta==$AP_MAC || wlan.ra==$AP_MAC)" 2>/dev/null | head -n 1)
 if [ -n "$PMF_ACTIVE_CHECK" ]; then
-    PMF_ACTIVE="Yes (Encrypted Frames Seen)"
+    PMF_ACTIVE="Yes"
 else
     PMF_ACTIVE="No"
 fi
