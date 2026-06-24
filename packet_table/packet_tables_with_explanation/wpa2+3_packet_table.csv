@@ -1,0 +1,26 @@
+Frame,Time,Type/Subtype,Transmitter,Receiver,Important Fields,Interpretation
+161,14.97479645,Probe Request,fe:f7:ae:58:03:ea,c8:3a:35:c2:e0:a2,SSID=Team_6,The client searches for the previously saved network profile.
+162,14.98682847,Probe Response,c8:3a:35:c2:e0:a2,fe:f7:ae:58:03:ea,"SSID=Team_6
+AKM=PSK+SAE
+Pairwise Cipher=CCMP",The AP advertises a WPA2/WPA3 transition configuration supporting both PSK and SAE authentication methods.
+163,14.98949663,Authentication,fe:f7:ae:58:03:ea,c8:3a:35:c2:e0:a2,"Authentication Algorithm=SAE
+SAE Commit",The client begins WPA3-SAE authentication.
+164,15.00249379,Authentication,c8:3a:35:c2:e0:a2,fe:f7:ae:58:03:ea,"Authentication Algorithm=SAE
+SAE Commit Response",The AP responds to the client’s SAE commit.
+165,15.00554815,Authentication,fe:f7:ae:58:03:ea,c8:3a:35:c2:e0:a2,"Authentication Algorithm=SAE
+SAE Confirm",The client confirms the SAE exchange.
+166,15.00554978,Authentication,c8:3a:35:c2:e0:a2,fe:f7:ae:58:03:ea,"Authentication Algorithm=SAE
+SAE Confirm Response",The AP completes the SAE authentication exchange.
+167,15.01596417,Association Request,fe:f7:ae:58:03:ea,c8:3a:35:c2:e0:a2,"SSID=Team_6
+AKM=SAE",The client proceeds with association despite the modified AKM configuration.
+168,15.02977262,Association Response,c8:3a:35:c2:e0:a2,fe:f7:ae:58:03:ea,Status Code=0 (Success),The AP accepts the association request and allows the connection process to continue.
+170,15.07231142,EAPOL M1,c8:3a:35:c2:e0:a2,fe:f7:ae:58:03:ea,"Message 1 of 4
+Anonce",The AP initiates the 4-Way Handshake.
+171,15.08815555,EAPOL M2,fe:f7:ae:58:03:ea,c8:3a:35:c2:e0:a2,"Message 2 of 4
+SNonce
+MIC",The client proves possession of the Pairwise Master Key and participates in key derivation.
+172,15.08817018,EAPOL M3,c8:3a:35:c2:e0:a2,fe:f7:ae:58:03:ea,"Message 3 of 4
+GTK Distribution
+MIC",The AP distributes group key material and installs session keys.
+173,15.08817386,EAPOL M4,fe:f7:ae:58:03:ea,c8:3a:35:c2:e0:a2,"Message 4 of 4
+MIC",The client confirms key installation and completes the 4-Way Handshake.
