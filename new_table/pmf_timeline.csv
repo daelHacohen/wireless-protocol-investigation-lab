@@ -1,0 +1,11 @@
+Frame,Time,Type/Subtype,Transmitter,Receiver
+"1","0.000000000","Probe Request","fe:f7:ae:58:03:ea","c8:3a:35:c2:e0:a2"
+"2","0.000011695","Probe Response","c8:3a:35:c2:e0:a2","fe:f7:ae:58:03:ea"
+"4","0.000015401","Authentication","fe:f7:ae:58:03:ea","c8:3a:35:c2:e0:a2"
+"5","0.012068591","Authentication","c8:3a:35:c2:e0:a2","fe:f7:ae:58:03:ea"
+"6","0.012071749","Association Request","fe:f7:ae:58:03:ea","c8:3a:35:c2:e0:a2"
+"7","0.034623351","Association Response","c8:3a:35:c2:e0:a2","fe:f7:ae:58:03:ea"
+"8","0.077445940","EAPOL M1","c8:3a:35:c2:e0:a2","fe:f7:ae:58:03:ea"
+"9","0.082419513","EAPOL M2","fe:f7:ae:58:03:ea","c8:3a:35:c2:e0:a2"
+"10","0.085401067","EAPOL M3","c8:3a:35:c2:e0:a2","fe:f7:ae:58:03:ea"
+"11","0.089284561","EAPOL M4","fe:f7:ae:58:03:ea","c8:3a:35:c2:e0:a2"
