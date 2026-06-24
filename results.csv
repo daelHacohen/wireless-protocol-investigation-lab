@@ -1,6 +1,0 @@
-Experiment_Phase,AP_Cipher_Suite,AP_AKM_Suite,AP_PMF_Requirement,Client_Authentication,Client_Association_Request,AP_Association_Response_Status,EAPOL_Packet_Count,Final_Connection_Status
-BASELINE,CCMP,PSK (WPA2),False,Yes,Yes,0 (Success),4,Success
-PMF,CCMP,PSK (WPA2),True,Yes,Yes,0 (Success),4,Success
-TKIP,TKIP,PSK (WPA2),False,Yes,Yes,0 (Success),4,Success
-WPA3+2,CCMP,WPA3 Transition (PSK+SAE),True,Yes,Yes,0 (Success),4,Success
-WPA3,CCMP,SAE (WPA3),True,Yes,Yes,0 (Success),4,Success
