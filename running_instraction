@@ -54,3 +54,8 @@ chmod +x analyze_lab.sh packet_timeline.sh
 ./analyze_lab.sh PMF.pcapng summary_results.csv
 ./analyze_lab.sh TKIP.pcapng summary_results.csv
 ./analyze_lab.sh WPA3.pcapng summary_results.csv
+
+./packet_timeline.sh BASELINE.pcapng baseline_timeline.csv
+./packet_timeline.sh PMF.pcapng pmf_timeline.csv
+./packet_timeline.sh TKIP.pcapng tkip_timeline.csv
+./packet_timeline.sh WPA3.pcapng wpa3_timeline.csv
