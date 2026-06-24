@@ -61,8 +61,8 @@ The repository is organized around the required deliverables: raw captures, pars
 | `dnsmasq2.conf` | DHCP/DNS configuration used by the controlled AP environment. |
 | `running_instraction` | Additional local run notes and command reminders. |
 | `README.md` | Repository guide and reproducibility instructions. |
-| `Assignment_2_Wireless_Protocol_Investigation_Lab_A_s.pdf` | Assignment requirements. |
-| `Assignment_2___Wireless_Protocol_Investigation_Lab.pdf` | Additional assignment/reference copy. |
+| `Assignment_2_Wireless_Protocol_Investigation_Lab.pdf` | Assignment requirements. |
+| `Wireless_Protocol_Investigation_Lab_Report.pdf` | Additional assignment/reference copy. |
 
 ---
 
