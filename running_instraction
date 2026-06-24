@@ -35,20 +35,7 @@ wlan.bssid == C83A35C2E0A2
 
 RUN PARSER SCRIPT:
 
-bash analyze_lab.sh BASELINE.pcapng results.csv
-bash analyze_lab.sh PMF.pcapng results.csv
-bash analyze_lab.sh TKIP.pcapng results.csv
-bash analyze_lab.sh WPA3+2.pcapng results.csv
-bash analyze_lab.sh WPA3.pcapng results.csv
-
----------------------------------------------------------------------------------------------------
-
-OVERLEAF LINK:
-
-https://www.overleaf.com/project/6a3019e0c8e2a76e31a1295a
-
----------------------------------------------------------------------------------------------------
-chmod +x analyze_lab.sh packet_timeline.sh
+chmod +x extract_security_summary.sh packet_timeline.sh
 
 ./extract_security_summary.sh BASELINE.pcapng summary_results.csv
 ./extract_security_summary.sh PMF.pcapng summary_results.csv
@@ -59,3 +46,11 @@ chmod +x analyze_lab.sh packet_timeline.sh
 ./packet_timeline.sh PMF.pcapng pmf_timeline.csv
 ./packet_timeline.sh TKIP.pcapng tkip_timeline.csv
 ./packet_timeline.sh WPA3.pcapng wpa3_timeline.csv
+
+---------------------------------------------------------------------------------------------------
+
+OVERLEAF LINK:
+
+https://www.overleaf.com/project/6a3019e0c8e2a76e31a1295a
+
+---------------------------------------------------------------------------------------------------
