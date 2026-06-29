@@ -345,27 +345,6 @@ All experiments in this repository are intended only for an authorized, controll
 - PCAPs may include environmental wireless noise; analysis should filter only the controlled AP, client, and experiment channel.
 - If a parameter is unsupported by hardware, it should be documented as a lab limitation rather than treated as a failed experiment.
 
----
 
-## 16. Defense Preparation Notes
 
-During the frontal defense, each group member should be able to:
 
-- Open the PCAPNG files and navigate to cited frames.
-- Explain the relevant Beacon, Probe Response, Authentication, Association, SAE, and EAPOL frames.
-- Identify RSN fields, AKM selectors, cipher suites, PMF bits, and Association Response status codes.
-- Explain what the parser extracts and what each output row means.
-- Connect every technical claim to a frame number, parsed field, screenshot, or output file.
-- State what the evidence proves and what it does not prove.
-
----
-
-## 17. References
-
-The final report should cite at least:
-
-- IEEE 802.11 / RSN standard-level material
-- Wireshark WLAN display filter documentation
-- Wireshark RSNA EAPOL display filter documentation
-- Scapy Dot11 documentation, if Scapy is used
-- A research or security reference related to the selected investigation track, such as SSID confusion, WPA3/SAE analysis, PMF behavior, KRACK, or related wireless security research
